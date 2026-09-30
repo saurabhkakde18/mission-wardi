@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --primary-color: #ff5722;
-  --primary-dark: #e64a19;
-  --secondary-color: #1a237e;
-  --secondary-dark: #121858;
-  --accent-color: #ffc107;
+  --primary-color: #d32f2f;
+  --primary-dark: #b71c1c;
+  --secondary-color: #002147;
+  --secondary-dark: #00152e;
+  --accent-color: #c4a173;
   --text-dark: #1f2937;
   --text-light: #f3f4f6;
   --text-muted: #6b7280;
   --bg-main: #ffffff;
   --bg-secondary: #f8fafc;
-  --bg-dark: #0f172a;
-  --bg-darker: #020617;
+  --bg-dark: #002147;
+  --bg-darker: #00152e;
   
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Outfit', sans-serif;

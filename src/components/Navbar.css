@@ -11,7 +11,7 @@
 }
 
 .navbar-scrolled {
-  background: rgba(2, 6, 23, 0.95);
+  background: rgba(0, 33, 71, 0.95);
   backdrop-filter: blur(10px);
   padding: 1rem 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -79,7 +79,7 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(2, 6, 23, 0.98);
+    background: rgba(0, 33, 71, 0.98);
     flex-direction: column;
     padding: 2rem;
     gap: 1.5rem;
