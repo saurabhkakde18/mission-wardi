@@ -20,16 +20,7 @@ const Hero = () => {
           <p className="sub-tagline">"यही है मिशन वर्दी का वादा...!"</p>
         </div>
 
-        <div className="batch-alert animate-fade-in" style={{animationDelay: '0.4s'}}>
-          <div className="batch-badge">नवीन बॅच सुरू</div>
-          <h3>1 तारखेपासून नवीन बॅच</h3>
-          <p className="demo-text">"एकदा क्लास जॉईन करून बघा, मग निर्णय घ्या!"</p>
-          <div className="batch-countdown">
-            <div className="cd-box"><span>07</span> Days</div>
-            <div className="cd-box"><span>12</span> Hours</div>
-            <div className="cd-box"><span>45</span> Mins</div>
-          </div>
-        </div>
+
 
         <div className="hero-cta animate-fade-in" style={{animationDelay: '0.6s'}}>
           <a href="https://wa.me/919765770076?text=Hi,%20I%20want%20to%20Join%20the%20New%20Batch!" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
