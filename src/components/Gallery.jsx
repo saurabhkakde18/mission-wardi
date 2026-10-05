@@ -25,22 +25,7 @@ const Gallery = () => {
           <p className="section-desc">Glimpses of our rigorous training, events, and facilities.</p>
         </div>
 
-        <div className="gallery-controls">
-          <label htmlFor="gallery-upload" className="btn btn-outline upload-btn">
-            <Upload size={18} /> Add Photos/Videos From Device
-          </label>
-          <input 
-            type="file" 
-            id="gallery-upload" 
-            accept="image/*,video/*" 
-            multiple 
-            onChange={handleMediaUpload} 
-            style={{ display: 'none' }} 
-          />
-          <p className="upload-note">
-            *Media added here are for preview purposes and won't be saved permanently to the server.
-          </p>
-        </div>
+
 
         <div className="gallery-grid">
           {media.map((item, index) => (
@@ -60,7 +45,7 @@ const Gallery = () => {
           
           {media.length === 0 && (
             <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
-              No media added yet. Click the button above to upload photos or videos!
+              More photos and videos coming soon!
             </div>
           )}
         </div>
