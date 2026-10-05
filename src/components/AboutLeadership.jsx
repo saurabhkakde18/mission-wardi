@@ -1,6 +1,7 @@
 import React from 'react';
-import { Share2, Send, Link as LinkIcon, User, Award } from 'lucide-react';
+import { Share2, Send, Link as LinkIcon, Award } from 'lucide-react';
 import './AboutLeadership.css';
+import rishiSirImage from '../assets/rishi-sir.jpg'; // We'll use this path when you save the image
 
 const AboutLeadership = () => {
   return (
@@ -16,9 +17,11 @@ const AboutLeadership = () => {
 
         <div className="leadership-card glass-card">
           <div className="leadership-image">
-            <div className="image-placeholder">
-              <User size={64} className="text-primary" />
-            </div>
+            <img 
+              src={rishiSirImage} 
+              alt="Rishi Sir - Director & Physical Trainer" 
+              className="leader-photo" 
+            />
           </div>
           
           <div className="leadership-content">

@@ -10,15 +10,13 @@
   flex: 0 0 300px;
 }
 
-.image-placeholder {
+.leader-photo {
   width: 100%;
   aspect-ratio: 3/4;
-  background: var(--bg-main);
+  object-fit: cover;
   border-radius: var(--border-radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-md);
+  display: block;
 }
 
 .leadership-content {
