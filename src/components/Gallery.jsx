@@ -1,16 +1,20 @@
-import React from 'react';
-import { Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
+import React, { useState } from 'react';
+import { Upload, Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
 import './Gallery.css';
 
-// Import permanent images here
-import rishiSirImg from '../assets/rishi-sir.jpg';
-
 const Gallery = () => {
-  // Hardcoded permanent media list
-  const media = [
-    { type: 'image', src: rishiSirImg, alt: 'Rishi Sir' }
-  ];
+  const [media, setMedia] = useState([]);
 
+  const handleMediaUpload = (e) => {
+    const files = Array.from(e.target.files);
+    if (files.length > 0) {
+      const newMedia = files.map(file => ({
+        type: file.type.startsWith('video/') ? 'video' : 'image',
+        src: URL.createObjectURL(file)
+      }));
+      setMedia(prev => [...newMedia, ...prev]);
+    }
+  };
 
   return (
     <section className="section-padding bg-secondary" id="gallery">
@@ -19,6 +23,23 @@ const Gallery = () => {
           <h4 className="section-subtitle">Our Academy</h4>
           <h2 className="section-title">Photo & Video Gallery</h2>
           <p className="section-desc">Glimpses of our rigorous training, events, and facilities.</p>
+        </div>
+
+        <div className="gallery-controls">
+          <label htmlFor="gallery-upload" className="btn btn-outline upload-btn">
+            <Upload size={18} /> Add Photos/Videos From Device
+          </label>
+          <input 
+            type="file" 
+            id="gallery-upload" 
+            accept="image/*,video/*" 
+            multiple 
+            onChange={handleMediaUpload} 
+            style={{ display: 'none' }} 
+          />
+          <p className="upload-note">
+            *Media added here are for preview purposes and won't be saved permanently to the server.
+          </p>
         </div>
 
         <div className="gallery-grid">
@@ -39,7 +60,7 @@ const Gallery = () => {
           
           {media.length === 0 && (
             <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
-              More photos and videos coming soon!
+              No media added yet. Click the button above to upload photos or videos!
             </div>
           )}
         </div>
