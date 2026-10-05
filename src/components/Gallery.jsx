@@ -3,10 +3,12 @@ import { Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
 import './Gallery.css';
 
 import galleryVideo1 from '../assets/gallery-video-1.mp4';
+import galleryVideo2 from '../assets/gallery-video-2.mp4';
 
 const Gallery = () => {
   const media = [
-    { type: 'video', src: galleryVideo1 }
+    { type: 'video', src: galleryVideo1 },
+    { type: 'video', src: galleryVideo2 }
   ];
 
   return (
@@ -20,9 +22,9 @@ const Gallery = () => {
 
         <div className="gallery-grid">
           {media.map((item, index) => (
-            <div key={index} className="gallery-item">
+            <div key={index} className="gallery-item" style={{ background: '#000' }}>
               {item.type === 'video' ? (
-                <video src={item.src} controls style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <video src={item.src} controls style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
               ) : (
                 <img src={item.src} alt={`Gallery item ${index + 1}`} loading="lazy" />
               )}
