@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
-import { Upload, Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
+import React from 'react';
+import { Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
 import './Gallery.css';
 
-const Gallery = () => {
-  const [media, setMedia] = useState([]);
+import rishiSirImg from '../assets/rishi-sir.jpg';
+import galleryVideo1 from '../assets/gallery-video-1.mp4';
 
-  const handleMediaUpload = (e) => {
-    const files = Array.from(e.target.files);
-    if (files.length > 0) {
-      const newMedia = files.map(file => ({
-        type: file.type.startsWith('video/') ? 'video' : 'image',
-        src: URL.createObjectURL(file)
-      }));
-      setMedia(prev => [...newMedia, ...prev]);
-    }
-  };
+const Gallery = () => {
+  const media = [
+    { type: 'image', src: rishiSirImg },
+    { type: 'video', src: galleryVideo1 }
+  ];
 
   return (
     <section className="section-padding bg-secondary" id="gallery">
@@ -24,8 +19,6 @@ const Gallery = () => {
           <h2 className="section-title">Photo & Video Gallery</h2>
           <p className="section-desc">Glimpses of our rigorous training, events, and facilities.</p>
         </div>
-
-
 
         <div className="gallery-grid">
           {media.map((item, index) => (
