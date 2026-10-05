@@ -11,6 +11,7 @@ import Facilities from './components/Facilities';
 import MedicalGuidance from './components/MedicalGuidance';
 import AdmissionProcess from './components/AdmissionProcess';
 import FAQ from './components/FAQ';
+import JoinForm from './components/JoinForm';
 import Footer from './components/Footer';
 import './index.css';
 
@@ -29,6 +30,7 @@ function App() {
       <MedicalGuidance />
       <AdmissionProcess />
       <FAQ />
+      <JoinForm />
       <Footer />
     </div>
   );
