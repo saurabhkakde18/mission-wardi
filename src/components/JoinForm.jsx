@@ -17,7 +17,15 @@ const JoinForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, dob, mobile, city } = formData;
-    const message = `Hello Mission Wardi! I want to join the academy. Here are my details:\n\n*Name:* ${name}\n*DOB:* ${dob}\n*Mobile No:* ${mobile}\n*City:* ${city}`;
+    
+    // Convert YYYY-MM-DD to DD/MM/YYYY
+    let formattedDob = dob;
+    if (dob && dob.includes('-')) {
+      const [year, month, day] = dob.split('-');
+      formattedDob = `${day}/${month}/${year}`;
+    }
+    
+    const message = `Hello Mission Wardi! I want to join the academy. Here are my details:\n\n*Name:* ${name}\n*DOB:* ${formattedDob}\n*Mobile No:* ${mobile}\n*City:* ${city}`;
     const whatsappUrl = `https://wa.me/919765770076?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
