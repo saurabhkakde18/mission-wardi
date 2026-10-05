@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import OTPLogin from './components/OTPLogin';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutLeadership from './components/AboutLeadership';
@@ -16,12 +15,6 @@ import Footer from './components/Footer';
 import './index.css';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  if (!isAuthenticated) {
-    return <OTPLogin onLoginSuccess={() => setIsAuthenticated(true)} />;
-  }
-
   return (
     <div className="app-container">
       <Navbar />
