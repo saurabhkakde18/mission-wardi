@@ -2,12 +2,10 @@ import React from 'react';
 import { Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
 import './Gallery.css';
 
-import rishiSirImg from '../assets/rishi-sir.jpg';
 import galleryVideo1 from '../assets/gallery-video-1.mp4';
 
 const Gallery = () => {
   const media = [
-    { type: 'image', src: rishiSirImg },
     { type: 'video', src: galleryVideo1 }
   ];
 
