@@ -42,9 +42,9 @@ const Footer = () => {
             <h3 style={{ fontSize: '1.25rem', marginBottom: '1.5rem', borderBottom: '2px solid var(--primary-color)', paddingBottom: '0.5rem', display: 'inline-block' }}>More</h3>
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', color: '#cbd5e1' }}>
               <li><a href="#facilities">Facilities</a></li>
-              <li><a href="#home">Gallery</a></li>
+              <li><a href="#gallery">Gallery</a></li>
               <li><a href="#admission">Admissions</a></li>
-              <li><a href="#admission">Contact</a></li>
+              <li><a href="#join-form">Contact</a></li>
             </ul>
           </div>
 

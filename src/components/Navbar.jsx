@@ -36,6 +36,7 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('courses')}>Courses</button>
           <button onClick={() => scrollToSection('physical')}>Physical Training</button>
           <button onClick={() => scrollToSection('facilities')}>Facilities</button>
+          <button onClick={() => scrollToSection('gallery')}>Gallery</button>
           <button onClick={() => scrollToSection('admission')} className="nav-btn-highlight">Admission</button>
         </div>
 

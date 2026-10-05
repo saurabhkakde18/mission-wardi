@@ -8,6 +8,7 @@ import Features from './components/Features';
 import PhysicalEvents from './components/PhysicalEvents';
 import SpecialPrograms from './components/SpecialPrograms';
 import Facilities from './components/Facilities';
+import Gallery from './components/Gallery';
 import MedicalGuidance from './components/MedicalGuidance';
 import AdmissionProcess from './components/AdmissionProcess';
 import FAQ from './components/FAQ';
@@ -27,6 +28,7 @@ function App() {
       <PhysicalEvents />
       <SpecialPrograms />
       <Facilities />
+      <Gallery />
       <MedicalGuidance />
       <AdmissionProcess />
       <FAQ />
