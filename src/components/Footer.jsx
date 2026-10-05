@@ -63,9 +63,9 @@ const Footer = () => {
             
             <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(255,87,34,0.1)', borderRadius: '8px', border: '1px solid rgba(255,87,34,0.3)', textAlign: 'center' }}>
               <p style={{ fontWeight: 'bold', color: 'var(--primary-color)', marginBottom: '0.5rem' }}>कठीण मेहनत • सच्ची लगन • मजबूत इरादा</p>
-              <button className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', width: '100%' }}>
+              <a href="#join-form" className="btn btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem', width: '100%', display: 'inline-block', textAlign: 'center' }}>
                 JOIN MISSION WARDI
-              </button>
+              </a>
             </div>
           </div>
         </div>
