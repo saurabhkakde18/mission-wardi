@@ -1,22 +1,18 @@
 import React, { useState } from 'react';
-import { Upload, Image as ImageIcon } from 'lucide-react';
+import { Upload, Image as ImageIcon, Video as VideoIcon } from 'lucide-react';
 import './Gallery.css';
 
-// Initial dummy images
-const initialImages = [
-  'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=600&auto=format&fit=crop', // Sports/running
-  'https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=600&auto=format&fit=crop', // Gym/Training
-  'https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=600&auto=format&fit=crop'  // Team/Group
-];
-
 const Gallery = () => {
-  const [images, setImages] = useState(initialImages);
+  const [media, setMedia] = useState([]);
 
-  const handleImageUpload = (e) => {
+  const handleMediaUpload = (e) => {
     const files = Array.from(e.target.files);
     if (files.length > 0) {
-      const newImages = files.map(file => URL.createObjectURL(file));
-      setImages(prev => [...newImages, ...prev]);
+      const newMedia = files.map(file => ({
+        type: file.type.startsWith('video/') ? 'video' : 'image',
+        src: URL.createObjectURL(file)
+      }));
+      setMedia(prev => [...newMedia, ...prev]);
     }
   };
 
@@ -25,36 +21,48 @@ const Gallery = () => {
       <div className="container">
         <div className="section-header">
           <h4 className="section-subtitle">Our Academy</h4>
-          <h2 className="section-title">Photo Gallery</h2>
+          <h2 className="section-title">Photo & Video Gallery</h2>
           <p className="section-desc">Glimpses of our rigorous training, events, and facilities.</p>
         </div>
 
         <div className="gallery-controls">
           <label htmlFor="gallery-upload" className="btn btn-outline upload-btn">
-            <Upload size={18} /> Add Photos From Device
+            <Upload size={18} /> Add Photos/Videos From Device
           </label>
           <input 
             type="file" 
             id="gallery-upload" 
-            accept="image/*" 
+            accept="image/*,video/*" 
             multiple 
-            onChange={handleImageUpload} 
+            onChange={handleMediaUpload} 
             style={{ display: 'none' }} 
           />
           <p className="upload-note">
-            *Photos added here are for preview purposes and won't be saved permanently to the server.
+            *Media added here are for preview purposes and won't be saved permanently to the server.
           </p>
         </div>
 
         <div className="gallery-grid">
-          {images.map((imgSrc, index) => (
+          {media.map((item, index) => (
             <div key={index} className="gallery-item">
-              <img src={imgSrc} alt={`Gallery item ${index + 1}`} loading="lazy" />
-              <div className="gallery-item-overlay">
-                <ImageIcon size={32} />
-              </div>
+              {item.type === 'video' ? (
+                <video src={item.src} controls style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              ) : (
+                <img src={item.src} alt={`Gallery item ${index + 1}`} loading="lazy" />
+              )}
+              {item.type !== 'video' && (
+                <div className="gallery-item-overlay">
+                  <ImageIcon size={32} />
+                </div>
+              )}
             </div>
           ))}
+          
+          {media.length === 0 && (
+            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', color: 'var(--text-muted)' }}>
+              No media added yet. Click the button above to upload photos or videos!
+            </div>
+          )}
         </div>
       </div>
     </section>
